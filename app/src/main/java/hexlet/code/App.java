@@ -4,8 +4,9 @@
 package hexlet.code;
 
 public class App {
-
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
+        String playerName = Cli.getPlayerName();
+        System.out.println("Hello, " + playerName + "!");
     }
 }
