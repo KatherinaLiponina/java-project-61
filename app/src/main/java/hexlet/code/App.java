@@ -5,8 +5,34 @@ package hexlet.code;
 
 public class App {
     public static void main(String[] args) {
+        int choice = Cli.playerChoice();
+        int result;
+        final int maxInputNumber = 6;
+
+        if (choice == 0) {
+            return;
+        } else if (choice < 0 || choice > maxInputNumber) {
+            System.out.println("If you fail this step, brain games aren't your cup of tea");
+            return;
+        }
+
         System.out.println("Welcome to the Brain Games!");
         String playerName = Cli.getPlayerName();
         System.out.println("Hello, " + playerName + "!");
+        switch (choice) {
+            case 1:
+                return;
+            case 2:
+                result = Even.gameProcess();
+                break;
+            default:
+                result = 0;
+                break;
+        }
+        if (result == 1) { //success
+            System.out.println("Congratulations, " + playerName);
+        } else { //fail
+            System.out.println("Let's try again, " + playerName);
+        }
     }
 }
