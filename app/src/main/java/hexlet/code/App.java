@@ -3,6 +3,8 @@
  */
 package hexlet.code;
 
+import hexlet.code.games.*;
+
 public class App {
     public static void main(String[] args) {
         int choice = Cli.playerChoice();
@@ -19,17 +21,22 @@ public class App {
         System.out.println("Welcome to the Brain Games!");
         String playerName = Cli.getPlayerName();
         System.out.println("Hello, " + playerName + "!");
+        Game gameChoosenByPlayer;
         switch (choice) {
             case 1:
                 return;
             case 2:
-                result = Even.gameProcess();
+                gameChoosenByPlayer = new Even();
+                break;
+            case 3:
+                gameChoosenByPlayer = new Calculator();
                 break;
             default:
-                result = 0;
-                break;
+                return;
         }
-        if (result == 1) { //success
+        Engine currentGame = new Engine(gameChoosenByPlayer);
+        result = currentGame.gameProcess();
+        if (result == 0) { //success
             System.out.println("Congratulations, " + playerName);
         } else { //fail
             System.out.println("Let's try again, " + playerName);
