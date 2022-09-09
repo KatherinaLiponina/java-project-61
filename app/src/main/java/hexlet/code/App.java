@@ -31,6 +31,9 @@ public class App {
             case 3:
                 gameChoosenByPlayer = new Calculator();
                 break;
+            case 4: 
+                gameChoosenByPlayer = new GCD();
+                break;
             default:
                 return;
         }

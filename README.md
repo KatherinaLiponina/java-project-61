@@ -9,3 +9,6 @@ https://asciinema.org/a/hdirCXvWKUOWEyRW1msFr9pfz
 asciinema (step 6)
 https://asciinema.org/a/NBN2DfKYChhYPsG0rHSfA0nqT
 
+asciinema (step 7)
+https://asciinema.org/a/NrmZCnxhGXtaeUOQfJgWIQVEZ
+
