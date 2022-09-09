@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-public class Even implements Game{
+public final class Even implements Game {
 
     public String getTask() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";

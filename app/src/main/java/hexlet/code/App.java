@@ -21,17 +21,23 @@ public class App {
         System.out.println("Welcome to the Brain Games!");
         String playerName = Cli.getPlayerName();
         System.out.println("Hello, " + playerName + "!");
+
         Game gameChoosenByPlayer;
+        final int choiceGreet = 1;
+        final int choiceEven = 2;
+        final int choiceCalc = 3;
+        final int choiceGCD = 4;
+
         switch (choice) {
-            case 1:
+            case choiceGreet:
                 return;
-            case 2:
+            case choiceEven:
                 gameChoosenByPlayer = new Even();
                 break;
-            case 3:
+            case choiceCalc:
                 gameChoosenByPlayer = new Calculator();
                 break;
-            case 4: 
+            case choiceGCD:
                 gameChoosenByPlayer = new GCD();
                 break;
             default:

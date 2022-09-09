@@ -3,8 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 import hexlet.code.games.Game;
 
-public class Engine {
-    Game specifiedGame;
+public final class Engine {
+    private Game specifiedGame;
     Engine(Game game) {
         specifiedGame = game;
     }

@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
-public class GCD implements Game {
-    
+public final class GCD implements Game {
     public String getTask() {
         return "Find the greatest common divisor of given numbers.";
     }
