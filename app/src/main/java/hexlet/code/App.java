@@ -28,6 +28,7 @@ public class App {
         final int choiceCalc = 3;
         final int choiceGCD = 4;
         final int choiceProgression = 5;
+        final int choicePrime = 6;
 
         switch (choice) {
             case choiceGreet:
@@ -43,6 +44,9 @@ public class App {
                 break;
             case choiceProgression:
                 gameChoosenByPlayer = new Progression();
+                break;
+            case choicePrime:
+                gameChoosenByPlayer = new Prime();
                 break;
             default:
                 return;
