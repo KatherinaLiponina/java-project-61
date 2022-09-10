@@ -27,6 +27,7 @@ public class App {
         final int choiceEven = 2;
         final int choiceCalc = 3;
         final int choiceGCD = 4;
+        final int choiceProgression = 5;
 
         switch (choice) {
             case choiceGreet:
@@ -39,6 +40,9 @@ public class App {
                 break;
             case choiceGCD:
                 gameChoosenByPlayer = new GCD();
+                break;
+            case choiceProgression:
+                gameChoosenByPlayer = new Progression();
                 break;
             default:
                 return;
