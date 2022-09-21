@@ -1,11 +1,12 @@
 package hexlet.code.games;
 
-public final class Calculator implements Game {
-    public String getTask() {
-        return "What is the result of expression?";
+public final class Calculator {
+    public static String getTask() {
+        final String task = "What is the result of expression?";
+        return task;
     }
 
-    public String[] getQuestion() {
+    public static String[] getQuestion() {
         final int numberLimit = 100;
         final int signAmount = 3;
         String[] question = new String[2];

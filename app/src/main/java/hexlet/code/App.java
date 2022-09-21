@@ -3,14 +3,11 @@
  */
 package hexlet.code;
 
-import hexlet.code.games.*;
-
 public class App {
     public static void main(String[] args) {
-        int choice = Cli.playerChoice();
+        int choice = Engine.getPlayersChoice();
         int result;
         final int maxInputNumber = 6;
-
         if (choice == 0) {
             return;
         } else if (choice < 0 || choice > maxInputNumber) {
@@ -18,45 +15,8 @@ public class App {
             return;
         }
 
-        System.out.println("Welcome to the Brain Games!");
-        String playerName = Cli.getPlayerName();
-        System.out.println("Hello, " + playerName + "!");
-
-        Game gameChoosenByPlayer;
-        final int choiceGreet = 1;
-        final int choiceEven = 2;
-        final int choiceCalc = 3;
-        final int choiceGCD = 4;
-        final int choiceProgression = 5;
-        final int choicePrime = 6;
-
-        switch (choice) {
-            case choiceGreet:
-                return;
-            case choiceEven:
-                gameChoosenByPlayer = new Even();
-                break;
-            case choiceCalc:
-                gameChoosenByPlayer = new Calculator();
-                break;
-            case choiceGCD:
-                gameChoosenByPlayer = new GCD();
-                break;
-            case choiceProgression:
-                gameChoosenByPlayer = new Progression();
-                break;
-            case choicePrime:
-                gameChoosenByPlayer = new Prime();
-                break;
-            default:
-                return;
-        }
-        Engine currentGame = new Engine(gameChoosenByPlayer);
-        result = currentGame.gameProcess();
-        if (result == 0) { //success
-            System.out.println("Congratulations, " + playerName);
-        } else { //fail
-            System.out.println("Let's try again, " + playerName);
-        }
+        String playerName = Engine.greetPlayer();
+        result = Engine.gameDistrubute(choice);
+        Engine.gameEnd(result, playerName);
     }
 }

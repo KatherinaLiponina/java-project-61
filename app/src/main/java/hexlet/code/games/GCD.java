@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
-public final class GCD implements Game {
-    public String getTask() {
-        return "Find the greatest common divisor of given numbers.";
+public final class GCD {
+    public static String getTask() {
+        final String task = "Find the greatest common divisor of given numbers.";
+        return task;
     }
-    public String[] getQuestion() {
+    public static String[] getQuestion() {
         final int numberLimit = 100;
         String[] question = new String[2];
         int firstNumber = (int) (Math.random() * numberLimit) + 1;

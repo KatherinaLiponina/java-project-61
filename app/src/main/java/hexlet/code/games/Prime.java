@@ -1,22 +1,28 @@
 package hexlet.code.games;
 
-public final class Prime implements Game {
-    
-    public String getTask() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+public final class Prime {
+    public static String getTask() {
+        final String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return task;
     }
-    public String[] getQuestion() {
+    public static String[] getQuestion() {
         final int numberLimit = 100;
         String[] question = new String[2];
         int number = (int) (Math.random() * numberLimit);
         question[0] = Integer.toString(number);
-        question[1] = isPrime(number);
+        if (isPrime(number)) {
+            question[1] = "yes";
+        } else {
+            question[1] = "no";
+        }
         return question;
     }
-    public static String isPrime(int number) {
-        for(int i = 2; i * i <= number; i++) {
-            if (number % i == 0) return "no";
+    public static boolean isPrime(int number) {
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
         }
-        return "yes";
+        return true;
     }
 }
