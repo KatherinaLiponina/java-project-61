@@ -6,15 +6,17 @@ public final class Even {
         final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         return task;
     }
-    public static String[] getQuestion() {
-        final int numberLimit = 1000;
-        String[] question = new String[2];
-        int number = (int) (Math.random() * numberLimit);
-        question[0] = Integer.toString(number);
-        if (isEven(number)) {
-            question[1] = "yes";
-        } else {
-            question[1] = "no";
+    public static String[][] getRound(int numberOfRounds) {
+        String[][] question = new String[numberOfRounds][2];
+        final int limit = 1000;
+        for (int i = 0; i < numberOfRounds; i++) {
+            int number = (int) (Math.random() * limit);
+            if (isEven(number)) {
+                question[i][1] = "yes";
+            } else {
+                question[i][1] = "no";
+            }
+            question[i][0] = Integer.toString(number);
         }
         return question;
     }

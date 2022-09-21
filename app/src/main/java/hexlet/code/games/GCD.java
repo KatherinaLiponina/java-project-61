@@ -5,16 +5,18 @@ public final class GCD {
         final String task = "Find the greatest common divisor of given numbers.";
         return task;
     }
-    public static String[] getQuestion() {
+    public static String[][] getRound(int numberOfRounds) {
         final int numberLimit = 100;
-        String[] question = new String[2];
-        int firstNumber = (int) (Math.random() * numberLimit) + 1;
-        int secondNumber = (int) (Math.random() * numberLimit) + 1;
+        String[][] questions = new String[numberOfRounds][2];
+        for (int i = 0; i < numberOfRounds; i++) {
+            int firstNumber = (int) (Math.random() * numberLimit) + 1;
+            int secondNumber = (int) (Math.random() * numberLimit) + 1;
 
-        question[0] = Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
-        question[1] = Integer.toString(gcd(firstNumber, secondNumber));
+            questions[i][0] = Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
+            questions[i][1] = Integer.toString(gcd(firstNumber, secondNumber));
+        }
 
-        return question;
+        return questions;
     }
     public static int gcd(int a, int b) {
         return b == 0 ? a : gcd(b, a % b);

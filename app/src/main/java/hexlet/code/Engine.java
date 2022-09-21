@@ -35,40 +35,31 @@ public final class Engine {
         final int choiceGCD = 4;
         final int choiceProgression = 5;
         final int choicePrime = 6;
-        final int amountOfRounds = 3;
-        String[][] gameQuestions = new String[amountOfRounds][2];
+        final int numberOfRounds = 3;
+        int result;
 
         switch (game) {
             case choiceGreet:
                 return -1;
             case choiceEven:
-                for (int i = 0; i < amountOfRounds; i++) {
-                    gameQuestions[i] = Even.getQuestion();
-                }
-                return gameWork(Even.getTask(), gameQuestions);
+                result = gameWork(Even.getTask(), Even.getRound(numberOfRounds));
+                break;
             case choiceCalc:
-                for (int i = 0; i < amountOfRounds; i++) {
-                    gameQuestions[i] = Calculator.getQuestion();
-                }
-                return gameWork(Calculator.getTask(), gameQuestions);
+                result = gameWork(Calculator.getTask(), Calculator.getRound(numberOfRounds));
+                break;
             case choiceGCD:
-                for (int i = 0; i < amountOfRounds; i++) {
-                    gameQuestions[i] = GCD.getQuestion();
-                }
-                return gameWork(GCD.getTask(), gameQuestions);
+                result = gameWork(GCD.getTask(), GCD.getRound(numberOfRounds));
+                break;
             case choiceProgression:
-                for (int i = 0; i < amountOfRounds; i++) {
-                    gameQuestions[i] = Progression.getQuestion();
-                }
-                return gameWork(Progression.getTask(), gameQuestions);
+                result = gameWork(Progression.getTask(), Progression.getRound(numberOfRounds));
+                break;
             case choicePrime:
-                for (int i = 0; i < amountOfRounds; i++) {
-                    gameQuestions[i] = Prime.getQuestion();
-                }
-                return gameWork(Prime.getTask(), gameQuestions);
+                result = gameWork(Prime.getTask(), Prime.getRound(numberOfRounds));
+                break;
             default:
                 return -1;
         }
+        return result;
     }
 
     public static int gameWork(String gameTask, String[][] questions) {
