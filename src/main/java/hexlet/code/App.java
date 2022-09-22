@@ -8,10 +8,7 @@ public class App {
         int choice = Engine.getPlayersChoice();
         int result;
         final int maxInputNumber = 6;
-        if (choice == 0) {
-            return;
-        } else if (choice < 0 || choice > maxInputNumber) {
-            System.out.println("If you fail this step, brain games aren't your cup of tea");
+        if (choice <= 0 || choice > maxInputNumber) {
             return;
         }
 

@@ -1,6 +1,6 @@
-run-dist: ./app/build/install/app/bin/app
-	./app/build/install/app/bin/app
-./app/build/install/app/bin/app: 
+run-dist: ./build/install/app/bin/app
+	./build/install/app/bin/app
+./build/install/app/bin/app: 
 	gradle installDist
 clean:
 	gradle clean

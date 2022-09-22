@@ -22,9 +22,9 @@ public final class Engine {
 
     public static void gameEnd(int result, String playerName) {
         if (result == 0) { //success
-            System.out.println("Congratulations, " + playerName);
+            System.out.println("Congratulations, " + playerName + "!");
         } else if (result == 1) { //fail
-            System.out.println("Let's try again, " + playerName);
+            System.out.println("Let's try again, " + playerName + "!");
         }
     }
 
