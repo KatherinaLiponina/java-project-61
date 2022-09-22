@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Cli {
     public static String getPlayerName() {
-        System.out.print("May I know your name? ");
+        System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String playerName = scanner.next();
         return playerName;
     }
 
     public static int playerChoice() {
-        System.out.println("Please enter the game number and press Enter");
+        System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
