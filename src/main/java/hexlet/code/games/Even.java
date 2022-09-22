@@ -10,7 +10,7 @@ public final class Even {
         String[][] question = new String[numberOfRounds][2];
         final int limit = 1000;
         for (int i = 0; i < numberOfRounds; i++) {
-            int number = (int) (Math.random() * limit);
+            int number = (int) (Math.random() * limit) + 1;
             if (isEven(number)) {
                 question[i][1] = "yes";
             } else {

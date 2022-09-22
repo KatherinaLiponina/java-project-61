@@ -9,7 +9,7 @@ public final class Prime {
         final int numberLimit = 100;
         String[][] questions = new String[numberOfRounds][2];
         for (int i = 0; i < numberOfRounds; i++) {
-            int number = (int) (Math.random() * numberLimit);
+            int number = (int) (Math.random() * numberLimit) + 1;
             questions[i][0] = Integer.toString(number);
             if (isPrime(number)) {
                 questions[i][1] = "yes";
