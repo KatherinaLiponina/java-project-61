@@ -29,24 +29,25 @@ public class App {
                 System.out.println("Welcome to the Brain Games!");
                 String player = Cli.getPlayerName();
                 System.out.println("Hello, " + player + "!");
-                return;
+                break;
             case choiceEven:
                 startEvenGame(numberOfRounds);
-                return;
+                break;
             case choiceCalc:
                 startCalculatorGame(numberOfRounds);
-                return;
+                break;
             case choiceGCD:
                 startGCDGame(numberOfRounds);
-                return;
+                break;
             case choiceProgression:
                 startProgressionGame(numberOfRounds);
-                return;
+                break;
             case choicePrime:
                 startPrimeGame(numberOfRounds);
-                return;
+                break;
             default:
-                return;
+                break;
         }
+        return;
     }
 }
