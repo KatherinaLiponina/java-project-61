@@ -1,10 +1,14 @@
 package hexlet.code.games;
+import hexlet.code.Engine;
 
 public final class Prime {
-    public static String getTask() {
-        final String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        return task;
+
+    public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+    public static void startPrimeGame(int numberOfRounds) {
+        Engine.gameWork(TASK, getRound(numberOfRounds));
     }
+
     public static String[][] getRound(int numberOfRounds) {
         final int numberLimit = 100;
         String[][] questions = new String[numberOfRounds][2];

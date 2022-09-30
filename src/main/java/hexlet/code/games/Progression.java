@@ -1,11 +1,14 @@
 package hexlet.code.games;
+import hexlet.code.Engine;
 
 public final class Progression {
 
-    public static String getTask() {
-        final String task = "What number is missing in the progression?";
-        return task;
+    public static final String TASK = "What number is missing in the progression?";
+
+    public static void startProgressionGame(int numberOfRounds) {
+        Engine.gameWork(TASK, getRound(numberOfRounds));
     }
+
     public static String[][] getRound(int numberOfRounds) {
         final int numberLimit = 100;
         final int shiftLimit = 20;
@@ -16,13 +19,13 @@ public final class Progression {
             int shift = (int) (Math.random() * numberLimit) % shiftLimit + 1;
             int missingNumber = (int) (Math.random() * numberLimit) % numbersInProgression;
 
-            questions[i][0] = progressionMaker(startNumber, shift, missingNumber, numbersInProgression);
+            questions[i][0] = generateProgression(startNumber, shift, missingNumber, numbersInProgression);
             questions[i][1] = Integer.toString(startNumber + shift * missingNumber);
         }
         return questions;
     }
 
-    public static String progressionMaker(int startNumber, int shift, int missingNumber, int numbersInProgression) {
+    public static String generateProgression(int startNumber, int shift, int missingNumber, int numbersInProgression) {
         StringBuilder questConstructor = new StringBuilder();
         for (int i = 0; i < numbersInProgression; i++) {
             if (i != missingNumber) {

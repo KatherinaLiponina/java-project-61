@@ -1,9 +1,12 @@
 package hexlet.code.games;
+import hexlet.code.Engine;
 
 public final class Calculator {
-    public static String getTask() {
-        final String task = "What is the result of expression?";
-        return task;
+
+    public static final String TASK = "What is the result of expression?";
+
+    public static void startCalculatorGame(int numberOfRounds) {
+        Engine.gameWork(TASK, getRound(numberOfRounds));
     }
 
     public static String[][] getRound(int numberOfRounds) {
