@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 
 public final class Even {
 
-    public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final String TASK = "Answer 'yes' if the number is even otherwise answer 'no'.";
 
     public static void startEvenGame(int numberOfRounds) {
         Engine.gameWork(TASK, getRound(numberOfRounds));

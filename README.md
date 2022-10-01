@@ -3,18 +3,18 @@
 
 <a href="https://codeclimate.com/github/KatherinaLiponina/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/889ba317779f7b624d31/maintainability" /></a>
 
-asciinema (step 5)
-https://asciinema.org/a/hdirCXvWKUOWEyRW1msFr9pfz
+asciinema (Even)
+https://asciinema.org/a/oSzs3oqyObKOtZtMjfF2wMAvK
 
-asciinema (step 6)
-https://asciinema.org/a/NBN2DfKYChhYPsG0rHSfA0nqT
+asciinema (Calc)
+https://asciinema.org/a/FwJbVZG10N4ZMgAphxlMRznW2
 
-asciinema (step 7)
-https://asciinema.org/a/NrmZCnxhGXtaeUOQfJgWIQVEZ
+asciinema (GCD)
+https://asciinema.org/a/i8GehYpsTw0QStL2rQfu3Zs2b
 
-asciinema (step 8)
-https://asciinema.org/a/XtNMeBZmcPIT8KnJXf0Uv6K8m
+asciinema (Progression)
+https://asciinema.org/a/0V10t0wWB9Jamq4CpgTIUVjsl
 
-asciinema (step 9)
-https://asciinema.org/a/7mRawTxRKr8XuARAVqKT7zA5U
+asciinema (Prime)
+https://asciinema.org/a/QqV3TLQ3Y7BCJNDvefYL6VvGF
 
