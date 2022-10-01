@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 
 public final class Calculator {
 
-    public static final String TASK = "What is the result of expression?";
+    public static final String TASK = "What is the result of the expression?";
 
     public static void startCalculatorGame(int numberOfRounds) {
         Engine.gameWork(TASK, getRound(numberOfRounds));
