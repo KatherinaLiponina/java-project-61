@@ -9,41 +9,35 @@ import static hexlet.code.games.Prime.startPrimeGame;
 import static hexlet.code.games.Progression.startProgressionGame;
 
 public class App {
+
+    static final int CHOICEGREET = 1;
+    static final int CHOICEEVEN = 2;
+    static final int CHOICECALC = 3;
+    static final int CHOICEGCD = 4;
+    static final int CHOICEPROGRESSION = 5;
+    static final int CHOICEPRIME = 6;
     public static void main(String[] args) {
         int game = Cli.playerChoice();
-        final int maxInputNumber = 6;
-        if (game <= 0 || game > maxInputNumber) {
-            return;
-        }
-
-        final int choiceGreet = 1;
-        final int choiceEven = 2;
-        final int choiceCalc = 3;
-        final int choiceGCD = 4;
-        final int choiceProgression = 5;
-        final int choicePrime = 6;
-        final int numberOfRounds = 3;
-
         switch (game) {
-            case choiceGreet:
+            case CHOICEGREET:
                 System.out.println("Welcome to the Brain Games!");
                 String player = Cli.getPlayerName();
                 System.out.println("Hello, " + player + "!");
                 break;
-            case choiceEven:
-                startEvenGame(numberOfRounds);
+            case CHOICEEVEN:
+                startEvenGame();
                 break;
-            case choiceCalc:
-                startCalculatorGame(numberOfRounds);
+            case CHOICECALC:
+                startCalculatorGame();
                 break;
-            case choiceGCD:
-                startGCDGame(numberOfRounds);
+            case CHOICEGCD:
+                startGCDGame();
                 break;
-            case choiceProgression:
-                startProgressionGame(numberOfRounds);
+            case CHOICEPROGRESSION:
+                startProgressionGame();
                 break;
-            case choicePrime:
-                startPrimeGame(numberOfRounds);
+            case CHOICEPRIME:
+                startPrimeGame();
                 break;
             default:
                 break;

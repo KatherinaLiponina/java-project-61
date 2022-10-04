@@ -5,11 +5,11 @@ public final class GCD {
 
     public static final String TASK = "Find the greatest common divisor of given numbers.";
 
-    public static void startGCDGame(int numberOfRounds) {
-        Engine.gameWork(TASK, getRound(numberOfRounds));
+    public static void startGCDGame() {
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
     }
 
-    public static String[][] getRound(int numberOfRounds) {
+    public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         final int numberLimit = 100;
         String[][] questions = new String[numberOfRounds][2];
         for (int i = 0; i < numberOfRounds; i++) {

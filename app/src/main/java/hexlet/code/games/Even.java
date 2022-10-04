@@ -5,11 +5,11 @@ public final class Even {
 
     public static final String TASK = "Answer 'yes' if number even otherwise answer 'no'.";
 
-    public static void startEvenGame(int numberOfRounds) {
-        Engine.gameWork(TASK, getRound(numberOfRounds));
+    public static void startEvenGame() {
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
     }
 
-    public static String[][] getRound(int numberOfRounds) {
+    public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         String[][] question = new String[numberOfRounds][2];
         final int limit = 1000;
         for (int i = 0; i < numberOfRounds; i++) {

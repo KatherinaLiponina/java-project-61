@@ -5,11 +5,11 @@ public final class Progression {
 
     public static final String TASK = "What number is missing in the progression?";
 
-    public static void startProgressionGame(int numberOfRounds) {
-        Engine.gameWork(TASK, getRound(numberOfRounds));
+    public static void startProgressionGame() {
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
     }
 
-    public static String[][] getRound(int numberOfRounds) {
+    public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         final int numberLimit = 100;
         final int shiftLimit = 20;
         final int numbersInProgression = 10;
@@ -19,21 +19,26 @@ public final class Progression {
             int shift = (int) (Math.random() * numberLimit) % shiftLimit + 1;
             int missingNumber = (int) (Math.random() * numberLimit) % numbersInProgression;
 
-            questions[i][0] = generateProgression(startNumber, shift, missingNumber, numbersInProgression);
+            String[] fullProgression = generateProgression(startNumber, shift, numbersInProgression);
+            StringBuilder questConstructor = new StringBuilder();
+            for (int j = 0; j < numbersInProgression; j++) {
+                if (j != missingNumber) {
+                    questConstructor.append(fullProgression[j] + " ");
+                } else {
+                    questConstructor.append(".. ");
+                }
+            }
+            questions[i][0] = questConstructor.toString();
             questions[i][1] = Integer.toString(startNumber + shift * missingNumber);
         }
         return questions;
     }
 
-    public static String generateProgression(int startNumber, int shift, int missingNumber, int numbersInProgression) {
-        StringBuilder questConstructor = new StringBuilder();
+    public static String[] generateProgression(int startNumber, int shift, int numbersInProgression) {
+        String[] progression = new String[numbersInProgression];
         for (int i = 0; i < numbersInProgression; i++) {
-            if (i != missingNumber) {
-                questConstructor.append(Integer.toString(startNumber + shift * i) + " ");
-            } else {
-                questConstructor.append(".. ");
-            }
+            progression[i] = Integer.toString(startNumber + shift * i);
         }
-        return questConstructor.toString();
+        return progression;
     }
 }

@@ -5,11 +5,11 @@ public final class Prime {
 
     public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void startPrimeGame(int numberOfRounds) {
-        Engine.gameWork(TASK, getRound(numberOfRounds));
+    public static void startPrimeGame() {
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
     }
 
-    public static String[][] getRound(int numberOfRounds) {
+    public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         final int numberLimit = 100;
         String[][] questions = new String[numberOfRounds][2];
         for (int i = 0; i < numberOfRounds; i++) {
