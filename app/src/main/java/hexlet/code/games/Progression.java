@@ -6,7 +6,7 @@ public final class Progression {
     public static final String TASK = "What number is missing in the progression?";
 
     public static void startProgressionGame() {
-        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.NUMBEROFROUNDS));
     }
 
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {

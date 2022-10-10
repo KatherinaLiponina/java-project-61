@@ -6,7 +6,7 @@ public final class Prime {
     public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startPrimeGame() {
-        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.NUMBEROFROUNDS));
     }
 
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {

@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public final class Engine {
 
-    private static final int NUMBEROFROUNDS = 3;
-    public static int getNumberOfRounds() {
-        return NUMBEROFROUNDS;
-    }
+    public static final int NUMBEROFROUNDS = 3;
+    private static final int SUCCESS = 0;
+    private static final int DEFEAT = 1;
 
     private static String greetPlayer() {
         System.out.println("Welcome to the Brain Games!");
@@ -25,8 +24,6 @@ public final class Engine {
     }
 
     public static void playGame(String gameTask, String[][] questions) {
-        final int success = 0;
-        final int defeat = 1;
         String playerName = greetPlayer();
         System.out.println(gameTask);
         Scanner scanner = new Scanner(System.in);
@@ -37,13 +34,13 @@ public final class Engine {
             if (!answer.equals(questions[i][1])) {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + questions[i][1] + "'");
                 scanner.close();
-                finishGame(defeat, playerName);
+                finishGame(DEFEAT, playerName);
                 return;
             }
             System.out.println("Correct!");
         }
         scanner.close();
-        finishGame(success, playerName);
+        finishGame(SUCCESS, playerName);
         return;
     }
 }

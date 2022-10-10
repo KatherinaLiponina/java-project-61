@@ -6,7 +6,7 @@ public final class Even {
     public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void startEvenGame() {
-        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.NUMBEROFROUNDS));
     }
 
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {

@@ -6,15 +6,16 @@ public final class GCD {
     public static final String TASK = "Find the greatest common divisor of given numbers.";
 
     public static void startGCDGame() {
-        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.NUMBEROFROUNDS));
     }
 
+    private static final int NUMBERLIMIT = 100;
+    private static final int PAIR = 2;
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
-        final int numberLimit = 100;
-        String[][] questions = new String[numberOfRounds][2];
+        String[][] questions = new String[numberOfRounds][PAIR];
         for (int i = 0; i < numberOfRounds; i++) {
-            int firstNumber = (int) (Math.random() * numberLimit) + 1;
-            int secondNumber = (int) (Math.random() * numberLimit) + 1;
+            int firstNumber = (int) (Math.random() * NUMBERLIMIT) + 1;
+            int secondNumber = (int) (Math.random() * NUMBERLIMIT) + 1;
 
             questions[i][0] = Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
             questions[i][1] = Integer.toString(gcd(firstNumber, secondNumber));

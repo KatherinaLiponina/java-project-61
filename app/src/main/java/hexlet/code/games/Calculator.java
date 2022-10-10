@@ -6,7 +6,7 @@ public final class Calculator {
     public static final String TASK = "What is the result of the expression?";
 
     public static void startCalculatorGame() {
-        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.getNumberOfRounds()));
+        Engine.playGame(TASK, generateQuestionAnswerPairs(Engine.NUMBEROFROUNDS));
     }
 
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
@@ -19,22 +19,34 @@ public final class Calculator {
             int rightNumber = (int) (Math.random() * numberLimit);
             int sign = (int) (Math.random() * numberLimit) % signAmount;
 
-            char charSign;
-            int result;
-            if (sign == 0) {
-                charSign = '*';
-                result = leftNumber * rightNumber;
-            } else if (sign == 1) {
-                charSign = '+';
-                result = leftNumber + rightNumber;
-            } else {
-                charSign = '-';
-                result = leftNumber - rightNumber;
-            }
-            questions[i][0] = Integer.toString(leftNumber) + " " + charSign + " " + Integer.toString(rightNumber);
-            questions[i][1] = Integer.toString(result);
+            questions[i][0] = generateQuestionString(leftNumber, sign, rightNumber);
+            questions[i][1] = Integer.toString(solveEquation(leftNumber, sign, rightNumber));
         }
         return questions;
     }
 
+    public static int solveEquation(int left, int operand, int right) {
+        int result = 0;
+        switch (operand) {
+            case 0:
+                result = left * right;
+                break;
+            case 1:
+                result = left + right;
+                break;
+            case 2:
+                result = left - right;
+                break;
+            default:
+                result = -1;
+        }
+        return result;
+    }
+
+    public static String generateQuestionString(int left, int operand, int right) {
+        String question = Integer.toString(left) + " ";
+        question += (operand == 0) ? "*" : (operand == 1) ? "+" : "-";
+        question += " " + Integer.toString(right);
+        return question;
+    }
 }
