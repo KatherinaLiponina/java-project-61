@@ -6,19 +6,14 @@ public final class Engine {
 
     public static final int NUMBEROFROUNDS = 3;
 
-    private static String getPlayerName() {
+    public static void playGame(String gameTask, String[][] questions) {
+        System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String playerName = scanner.next();
-        return playerName;
-    }
-
-    public static void playGame(String gameTask, String[][] questions) {
-        System.out.println("Welcome to the Brain Games!");
-        String playerName = getPlayerName();
         System.out.println("Hello, " + playerName + "!");
         System.out.println(gameTask);
-        Scanner scanner = new Scanner(System.in);
+
         for (int i = 0; i < NUMBEROFROUNDS; i++) {
             System.out.println("Question: " + questions[i][0]);
             System.out.print("Your answer: ");
