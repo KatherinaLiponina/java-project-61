@@ -12,13 +12,10 @@ public final class Even {
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         String[][] question = new String[numberOfRounds][2];
         final int limit = 1000;
+        final int startNumber = 1;
         for (int i = 0; i < numberOfRounds; i++) {
-            int number = (int) (Math.random() * limit) + 1;
-            if (isEven(number)) {
-                question[i][1] = "yes";
-            } else {
-                question[i][1] = "no";
-            }
+            int number = Utils.generateRandomNumber(startNumber, limit);
+            question[i][1] = Utils.makeVerdikt(isEven(number));
             question[i][0] = Integer.toString(number);
         }
         return question;

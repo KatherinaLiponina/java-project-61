@@ -15,9 +15,9 @@ public final class Progression {
         final int numbersInProgression = 10;
         String[][] questions = new String[numberOfRounds][2];
         for (int i = 0; i < numberOfRounds; i++) {
-            int startNumber = (int) (Math.random() * numberLimit);
-            int shift = (int) (Math.random() * numberLimit) % shiftLimit + 1;
-            int missingNumber = (int) (Math.random() * numberLimit) % numbersInProgression;
+            int startNumber = Utils.generateRandomNumber(0, numberLimit);
+            int shift = Utils.generateRandomNumber(1, shiftLimit);
+            int missingNumber = Utils.generateRandomNumber(0, numbersInProgression - 1);
 
             String[] fullProgression = generateProgression(startNumber, shift, numbersInProgression);
             StringBuilder questConstructor = new StringBuilder();

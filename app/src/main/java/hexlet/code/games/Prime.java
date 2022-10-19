@@ -11,19 +11,19 @@ public final class Prime {
 
     public static String[][] generateQuestionAnswerPairs(int numberOfRounds) {
         final int numberLimit = 100;
+        final int startNumber = 2;
         String[][] questions = new String[numberOfRounds][2];
         for (int i = 0; i < numberOfRounds; i++) {
-            int number = (int) (Math.random() * numberLimit) + 2;
+            int number = Utils.generateRandomNumber(startNumber, numberLimit);
             questions[i][0] = Integer.toString(number);
-            if (isPrime(number)) {
-                questions[i][1] = "yes";
-            } else {
-                questions[i][1] = "no";
-            }
+            questions[i][1] = Utils.makeVerdikt(isPrime(number));
         }
         return questions;
     }
     public static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
         for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
                 return false;
